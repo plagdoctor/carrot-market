@@ -45,11 +45,7 @@ const Enter: NextPage = () => {
           ) : null}
           {method === "phone" ? (
             <Input
-              name="phone"
-              label="Phone number"
-              type="number"
-              kind="phone"
-              required
+              name="phone"              label="Phone number"               type="number"                kind="phone"               required
             />
           ) : null}
           {method === "email" ? <Button text={"Get login link"} /> : null}
