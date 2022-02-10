@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 const ItemDetail: NextPage = () => {
   return (
     <Layout canGoBack>
-      <div className="px-4  py-4">
+      <div className="px-4 py-4">
         <div className="mb-8">
           <div className="h-96 bg-slate-300" />
           <div className="flex cursor-pointer py-3 border-t border-b items-center space-x-3">
@@ -31,7 +31,7 @@ const ItemDetail: NextPage = () => {
               the first motherfucker to get shot. You understand?
             </p>
             <div className="flex items-center justify-between space-x-2">
-              <Button large text="Talk to seller" />
+              <Button large text="talk to seller"></Button>
               <button className="p-3 rounded-md flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500">
                 <svg
                   className="h-6 w-6 "
