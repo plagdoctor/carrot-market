@@ -1,47 +1,41 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { FieldErrors, useForm } from "react-hook-form";
+
+interface LoginForm {
+    username:string;
+    password:string;
+    email:string;
+    errors?:string;
+}
 
 export default function Forms() {
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [formerror, setFormErrors] = useState("");
-    const [emailError, setEmailError] = useState("");
+       
+    const {register, handleSubmit, watch,formState: {errors},setError} = useForm<LoginForm>({
+        mode: "onBlur",
+    });        
+    
+    const onValid = (data: LoginForm) => {
+        console.log("i'm valid");
+        // setError("errors", {message:"server errors"});
+    };
 
-    console.log(username, email, password);
-    const onUsernameChange = (event:React.SyntheticEvent<HTMLInputElement>) => {
-        const {
-            currentTarget: { value },
-        } = event;
-        setUsername(value);
+    const onInvalid = (errors: FieldErrors ) => {
+        console.log(errors);
     };
-    const onEmailChange = (event:React.SyntheticEvent<HTMLInputElement>) => {
-        const {
-            currentTarget: { value },
-        } = event;
-        setEmailError("");
-        setEmail(value);
-    };
-    const onPasswordChange = (event:React.SyntheticEvent<HTMLInputElement>) => {
-        const {
-            currentTarget: { value },
-        } = event;
-        setPassword(value);
-    };        
-    const onSubmit = () => 
-        (event:React.SyntheticEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        console.log(email, username, password);
-        if (username ==="" || email === "" || password === "") {
-            setFormErrors("All fields are required");
-        }
-        if(!email.includes("@")) {
-            setEmailError("email is required");
-        }
-    }
-    return <form>
-        <input value={username} onChange={onUsernameChange} type="text" placeholder="Username" required minLength={5} />
-        <input value={email} onChange={onEmailChange} type="email" placeholder="Email" required /> {emailError}
-        <input value={password} onChange={onPasswordChange} type="password" placeholder="Password" required />
+    console.log(watch());
+    
+    return (<form onSubmit={handleSubmit(onValid, onInvalid)}>
+        <input {...register("username", {required: "Username is required", minLength: {
+            message: "The username should be longer than 5chars.", value: 5,
+        }})} type="text" placeholder="Username"  />
+        <input {...register("email", {required: "이메일주소가 필요해요", validate:{
+            notNaver: (value) => !value.includes("@naver.com") || "네이버안되요" ,
+            
+        },})} type="email" placeholder="Email" className={`${Boolean(errors.email?.message) ? "border-red-500" : ""}`} />
+        <span className="text-red-500">{errors.email?.message}</span>
+        <input {...register("password", {required: "password please"})} type="password" placeholder="Password"  />
         <input type="submit" value="Create account" />
+        <span className="text-red-500">{errors.errors?.message}</span>
     </form>
+    );
 }
