@@ -11,13 +11,22 @@ interface EnterForm {
   email?: string;
   phone?: string;
 }
+interface TokenForm {
+  token: string;
+}
+
+interface MutationResult {
+  ok: boolean;
+}
+
 const Enter: NextPage = () => {
   const [state, setState] = useState({
     loading: false
   })
-  const [enter, {loading, data, error}] = useMutation("/api/users/enter");
-  const [submitting, setSubmitting] = useState(false);
-  const {register, watch, reset, handleSubmit} = useForm<EnterForm>();
+  const [enter, {loading, data, error}] = useMutation<MutationResult>("/api/users/enter");
+  const [confirmToken, { loading:tokenLoading, data: tokenData}] = useMutation<MutationResult>("/api/users/confirm");
+  const {register, reset, handleSubmit} = useForm<EnterForm>();
+  const {register: tokenRegister, handleSubmit: tokenHandleSubmit} = useForm<TokenForm>();
   const [method, setMethod] = useState<"email" | "phone">("email");
   const onEmailClick = () => {
     reset();
@@ -30,13 +39,23 @@ const Enter: NextPage = () => {
   const onValid = (validForm:EnterForm) => {
     enter(validForm);
   };
+
+  const onTokenValid = (validForm:TokenForm) => {
+    if(tokenLoading)return;
+    confirmToken(validForm);
+  };
+
   console.log(loading, data, error);
   //console.log(watch());
   return (
     <div className="mt-16 px-4">
       <h3 className="text-3xl font-bold text-center">Enter to Carrot</h3>
       <div className="mt-12">
-        <div className="flex flex-col items-center">
+        {data?.ok ? <form onSubmit={ tokenHandleSubmit(onTokenValid) } className="flex flex-col mt-8 space-y-4">
+          
+            <Input register={tokenRegister("token")} name="token" label="Confirmation Token" type="number" required />
+            <Button text={tokenLoading ? "Loading" :"Confirm Token"} />
+        </form> : <>        <div className="flex flex-col items-center">
           <h5 className="text-sm text-gray-500 font-medium">Enter using:</h5>
           <div className="grid  border-b  w-full mt-8 grid-cols-2 ">
             <button
@@ -76,7 +95,7 @@ const Enter: NextPage = () => {
           {method === "phone" ? (
             <Button text={"Get one-time password"} />
           ) : null}
-        </form>
+        </form></>}
 
         <div className="mt-8">
           <div className="relative">
