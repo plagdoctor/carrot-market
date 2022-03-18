@@ -9,9 +9,6 @@
 
 
 ## 1. OS 설치
-https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6e7f18ea-c405-4b96-a59f-3c35e809708a%2FUntitled.png?table=block&id=ff07950e-f9de-442f-b986-844da5a78028&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=2000&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2
-
-## 1. OS 설치
 
 
 ---
@@ -19,7 +16,7 @@ https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.no
 > 일단 기본적으로 리눅스 셋팅 기준으로 가져가려고 함
 > 
 - MacOS 에서 셋팅 (`완료`)
-- WSL2(우분투)에서 셋팅 (`진행중`)
+- WSL2(우분투)에서 셋팅 (`완료`)  <- 현재 가이드 기준
 - CentOS에서 셋팅(`진행예정`)
 
 ## 2. node.js
