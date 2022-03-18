@@ -59,7 +59,7 @@
 > 설치 after
 > 
 
-![Untitled](hhttps://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F404de4d2-6caa-4d35-9106-5d5f284e05d2%2FUntitled.png?table=block&id=ffa83fac-0dce-4fd0-b60a-ddf2188104af&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=1070&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F404de4d2-6caa-4d35-9106-5d5f284e05d2%2FUntitled.png?table=block&id=ffa83fac-0dce-4fd0-b60a-ddf2188104af&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=1070&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
 
 > 프로젝트에 사용할 Node.js 버전을 변경하려면 새 프로젝트 디렉터리 `mkdir NodeTest`를 만들고 `cd NodeTest` 디렉터리로 들어간 다음, `nvm use node`를 입력하여 현재 버전으로 전환하거나 `nvm use --lts`를 입력하여 LTS 버전으로 전환합니다. `nvm use v8.2.1`처럼 설치한 버전의 특정 번호를 사용할 수도 있습니다. (사용 가능한 모든 Node.js 버전을 나열하려면 `nvm ls-remote` 명령을 사용합니다.)
 > 
