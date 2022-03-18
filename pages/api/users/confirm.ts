@@ -20,7 +20,7 @@ async function handler(
     if (!foundToken) return res.status(404).end();
     console.log(foundToken);
     req.session.user = {
-        id : foundToken.userId
+        id : foundToken.userId,
     };
     await req.session.save();
     await client.token.deleteMany({
@@ -33,7 +33,7 @@ async function handler(
 }
 
 export default withApiSession(withHandler({
-    methods: ["GET"], 
+    methods: ["POST"], 
     handler,
     isPrivate: false
 }));
