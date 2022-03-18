@@ -1,6 +1,22 @@
 # NextJS boilerplate install
 
+## 0. sample enter pages 
+
+---
+
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6e7f18ea-c405-4b96-a59f-3c35e809708a%2FUntitled.png?table=block&id=ff07950e-f9de-442f-b986-844da5a78028&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=2000&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
+
+
+## 0-1. menu
+---
+
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Faae7c74e-cb9c-42b3-9e0d-3668609e1219%2FUntitled.png?table=block&id=95c36308-0748-4365-a912-de3048314884&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=1890&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
+
 ## 1. OS 설치
+https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6e7f18ea-c405-4b96-a59f-3c35e809708a%2FUntitled.png?table=block&id=ff07950e-f9de-442f-b986-844da5a78028&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=2000&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2
+
+## 1. OS 설치
+
 
 ---
 
@@ -50,7 +66,7 @@
 > 설치 after
 > 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/404de4d2-6caa-4d35-9106-5d5f284e05d2/Untitled.png)
+![Untitled](hhttps://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F404de4d2-6caa-4d35-9106-5d5f284e05d2%2FUntitled.png?table=block&id=ffa83fac-0dce-4fd0-b60a-ddf2188104af&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=1070&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
 
 > 프로젝트에 사용할 Node.js 버전을 변경하려면 새 프로젝트 디렉터리 `mkdir NodeTest`를 만들고 `cd NodeTest` 디렉터리로 들어간 다음, `nvm use node`를 입력하여 현재 버전으로 전환하거나 `nvm use --lts`를 입력하여 LTS 버전으로 전환합니다. `nvm use v8.2.1`처럼 설치한 버전의 특정 번호를 사용할 수도 있습니다. (사용 가능한 모든 Node.js 버전을 나열하려면 `nvm ls-remote` 명령을 사용합니다.)
 > 
@@ -110,12 +126,12 @@ npx tailwindcss init -p
 
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2c3558a6-90f8-436d-af3c-99fc966ac0b4/Untitled.png)
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2c3558a6-90f8-436d-af3c-99fc966ac0b4%2FUntitled.png?table=block&id=9fad7710-8d19-49e3-8a1f-185564f83192&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=670&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
 
 > 이쯤에서 vsc(visual studio code) 에 익스텐션 Tailwind CSS IntelliSense 설치
 > 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/464334c4-70de-4dfc-805c-5c09a6403fa7/Untitled.png)
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F464334c4-70de-4dfc-805c-5c09a6403fa7%2FUntitled.png?table=block&id=451944e1-b071-4254-a77c-e82e3bb14045&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=2000&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
 
 <aside>
 🚧 엇 우분투에서 테일윈드 설치하고 undefined 에러가 나옴!
