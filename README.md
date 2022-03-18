@@ -45,7 +45,7 @@
 > 설치 before
 > 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1e2ee41e-5ac0-4b86-b06e-602406a9b56d/Untitled.png)
+![Untitled](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1e2ee41e-5ac0-4b86-b06e-602406a9b56d%2FUntitled.png?table=block&id=a4640032-2434-4a7a-9e9f-3719fcb54e31&spaceId=07268960-0cc1-40f1-8528-112a589a48d8&width=1940&userId=4449deea-1ec5-4db8-a654-18707cae51e4&cache=v2)
 
 > 설치 after
 > 
