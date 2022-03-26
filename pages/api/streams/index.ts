@@ -15,7 +15,10 @@ async function handler(
     console.log(name);
     console.log(price);
     if(req.method === "GET"){
-        const streams = await client.stream.findMany();
+        const streams = await client.stream.findMany({
+            take: 10,
+            skip: 10,
+        });
         res.json({
             ok:true,
             streams,
