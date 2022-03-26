@@ -29,7 +29,7 @@ const EditProfile: NextPage = () => {
     if(user?.name) setValue("name", user.name);
   },[user, setValue]);
   const [editProfile,{data, loading}] = useMutation<EditProfileResponse>(`/api/users/me`);
-  const onValid = ({phone, email, name, avatar}: EditProfileForm) => {
+  const onValid = async ({phone, email, name, avatar}: EditProfileForm) => {
 
     //console.log(form);
     if(loading) return;
@@ -40,7 +40,20 @@ const EditProfile: NextPage = () => {
       editProfile({email: email !== user?.email ? email : "" ,
                  phone: phone !== user?.phone ? phone : ""
                 }); */
-    editProfile({email, phone, name, avatar});                
+    if(avatar && avatar.length >0 && user?.id){
+      const {id, uploadURL} = await (await fetch(`/api/files`)).json();
+      const form = new FormData();
+      form.append("file", avatar[0], user?.id + "");
+      await fetch(uploadURL, {
+        method: "POST",
+        body: form,
+      })
+      
+      return;
+    }else{
+      editProfile({email, phone, name});                
+    }
+    
   }
   useEffect(() => {
     if(data && !data.ok && data.error){
