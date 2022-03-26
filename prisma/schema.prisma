@@ -182,6 +182,6 @@ model Message {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    Int
   message   String   @db.MediumText
-  steam     Stream   @relation(fields: [steamId], references: [id], onDelete: Cascade)
-  steamId   Int
+  stream    Stream   @relation(fields: [streamId], references: [id], onDelete: Cascade)
+  streamId  Int
 }
