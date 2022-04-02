@@ -7,6 +7,8 @@ import Head from "next/head";
 import useSWR from "swr";
 import products from "./api/products";
 import { Fav, Product } from "@prisma/client";
+//import Image from "next/image";
+//import macImage from "../public/mac_img.jpeg"
 
 export interface ProductWithCount extends Product {
   _count: {

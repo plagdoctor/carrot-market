@@ -33,6 +33,8 @@ model User {
   records         Record[]
   streams         Stream[]
   messages        Message[]
+  sentDMs         Chats[]     @relation(name: "sentDM")
+  receivedDMs     Chats[]     @relation(name: "receivedDM")
 }
 
 model Token {
@@ -59,6 +61,7 @@ model Product {
   sales       Sale[]
   purchases   Purchase[]
   records     Record[]
+  chats       Chats[]
 }
 
 model Post {
@@ -184,4 +187,17 @@ model Message {
   message   String   @db.MediumText
   stream    Stream   @relation(fields: [streamId], references: [id], onDelete: Cascade)
   streamId  Int
+}
+
+model Chats {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  directMessage String   @db.MediumText
+  createdBy     User     @relation(name: "sentDM", fields: [createdById], references: [id], onDelete: Cascade)
+  createdById   Int
+  createdFor    User     @relation(name: "receivedDM", fields: [createdForId], references: [id], onDelete: Cascade)
+  createdForId  Int
+  product       Product? @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId     Int?
 }
