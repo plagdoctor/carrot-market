@@ -25,7 +25,7 @@ const Chats: NextPage = () => {
             <Chat
               id={chat.id}
               name={chat.createdBy.name}
-              avatar= {chat.createdBy.avatar? chat.createdBy.avatar : 'none'}
+              avatar= {chat.createdBy.avatar? chat.createdBy.avatar : null}
               message={chat.directMessage}
             />
           ))}       
