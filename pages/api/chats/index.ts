@@ -16,6 +16,7 @@ async function handler(
             distinct: ['createdById', 'productId'],
             select: {
                 id: true,
+                productId: true,
                 createdBy : true,
                 directMessage: true,
             },

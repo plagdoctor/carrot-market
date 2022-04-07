@@ -60,7 +60,7 @@ const ItemDetail: NextPage = () => {
               {data?.product?.description}
             </p>
             <div className="flex items-center justify-between space-x-2">
-              <Button large text="Talk to seller" />
+              <Button large text="Talk to seller" href={`/chats/${data?.product?.id}`} />
               <button onClick={onFavClick} className={cls("p-3 rounded-md flex items-center justify-center", data?.isLiked ? "text-red-400 hover:bg-gray-100 hover:text-red-500" : "text-gray-400 hover:bg-gray-100 hover:text-gray-500" )}>
                 
               {data?.isLiked ? ( 

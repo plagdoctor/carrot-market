@@ -56,7 +56,7 @@ const Enter: NextPage = () => {
 
   return (
     <div className="mt-16 px-4">
-      <h3 className="text-3xl font-bold text-center">Enter to Carrot</h3>
+      <h3 className="text-3xl font-bold text-center">Enter to Miumiu</h3>
       <div className="mt-12">
         {data?.ok ? <form onSubmit={ tokenHandleSubmit(onTokenValid) } className="flex flex-col mt-8 space-y-4">
           

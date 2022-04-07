@@ -1,11 +1,49 @@
 import type { NextPage } from "next";
 import Layout from "@components/layout";
 import Message from "@components/message";
+import { Chats, Product } from "@prisma/client";
+import useUser from "@libs/client/useUser";
+import useSWR from "swr";
+import { useRouter } from "next/router";
+
+interface chatMessage {
+  id: number;
+  createdAt: Date;
+  updatedAt: Date;
+  directMessage: string;
+  createdById: number;
+  createdForId: number;
+  productId: number | null;
+}
+
+interface ChatWithMessages extends Product {
+  chats: chatMessage[];
+  //chats: Chats[];
+}
+
+interface ChatsResponse {
+  ok:boolean;
+  productMessage : ChatWithMessages; 
+}
 
 const ChatDetail: NextPage = () => {
+  const {user} = useUser();
+  const router = useRouter();
+  const {data} = useSWR<ChatsResponse>(router.query.id ? `/api/chats/${router.query.id}` : null)
+  if(data?.productMessage)
+  { 
+    console.log("here");
+
+    console.log(data?.productMessage);
+    //console.log(data?.productMessage?.chats[1]?.directMessage);
+  }
+ 
   return (
     <Layout canGoBack title="Steve">
       <div className="py-10 pb-16 px-4 space-y-4">
+        {data?.productMessage.chats && data?.productMessage.chats.map((chatMessage) => ( 
+          <Message key={chatMessage.id} message={chatMessage.directMessage} reversed= {chatMessage.createdById === user?.id } />
+         ))}
         <Message message="Hi how much are you selling them for?" />
         <Message message="I want ￦20,000" reversed />
         <Message message="미쳤어" />
