@@ -34,6 +34,7 @@ async function handler(
                 id: true,
                 createdById: true,
                 createdForId: true,
+                createdFor: true,
                 directMessage: true,
             }
             
@@ -44,6 +45,7 @@ async function handler(
             },
             include: {
                 chats: true,
+                user: true,
             }
             
         });        
