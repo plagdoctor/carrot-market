@@ -22,7 +22,7 @@ const Chats: NextPage = () => {
     <Layout hasTabBar title="채팅">
       <div className="divide-y-[1px] ">
         {data?.chats?.map((chat) => (
-            <Chat
+            <Chat key={chat.id}
               id={chat.id}
               name={chat.createdBy.name}
               avatar= {chat.createdBy.avatar? chat.createdBy.avatar : null}

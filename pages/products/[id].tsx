@@ -35,7 +35,7 @@ const ItemDetail: NextPage = () => {
   };
   console.log(data);
   return (
-    <Layout canGoBack>
+    <Layout canGoBack seoTitle="Product Detail">
       <div className="px-4  py-4">
         <div className="mb-8">
           <div className=" relative pb-80"> 
@@ -89,8 +89,8 @@ const ItemDetail: NextPage = () => {
         <div>
           <h2 className="text-2xl font-bold text-gray-900">Similar items</h2>
             <div className=" mt-6 grid grid-cols-2 gap-4">
-              {data?.relatedProducts.map((relatedProduct) => (
-                <Link href={`/products/${relatedProduct?.id}`}>
+              {data?.relatedProducts?.map((relatedProduct) => (
+                <Link key={relatedProduct.id} href={`/products/${relatedProduct?.id}`}>
                   <div key={relatedProduct.id}>
                     <div className="h-56 w-full mb-4 bg-slate-300" />
                     <h3 className="text-gray-700 -mb-1">{relatedProduct.name}</h3>
