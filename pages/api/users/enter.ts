@@ -120,21 +120,22 @@ async function handler(
         }
     })
     if (phone) {
-        // const message = await twilioClient.messages.create({
-        //     messagingServiceSid: process.env.TWILIO_MS_SID,
-        //     to: process.env.PHONE_NO!,
-        //     body: `Your login token is ${payload}.`,
+         const message = await twilioClient.messages.create({
+             messagingServiceSid: process.env.TWILIO_MS_SID,
+             to: `+82${phone}`,
+             body: `Your login token is ${payload}.`,
     
-        // });
-        // console.log(message);   
+         });
+         console.log( `+82${phone}`);   
+         console.log(message);   
     } else if (email) {
-/*          const email_confirm = await mail.send({
+         const email_confirm = await mail.send({
             from: "danroom85@gmail.com",
             to: `${email}`,
             subject: "Your Miumiu Market Verification Email",
             text: `Your token is ${payload}.`,
             html: `<string>Your token is ${payload}.</strong>`,
-        })  */
+        }) 
     }
 
     return res.json({
