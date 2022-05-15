@@ -130,8 +130,8 @@ async function handler(
          console.log(message);   
     } else if (email) {
          const email_confirm = await mail.send({
-            from: "danroom85@gmail.com",
-            to: `${email}`,
+            to: "danroom85@gmail.com",
+            from: "danroom@naver.com",
             subject: "Your Miumiu Market Verification Email",
             text: `Your token is ${payload}.`,
             html: `<string>Your token is ${payload}.</strong>`,
@@ -140,6 +140,7 @@ async function handler(
 
     return res.json({
         ok:true,
+        
     });
 }
 
