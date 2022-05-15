@@ -130,7 +130,7 @@ async function handler(
          console.log(message);   
     } else if (email) {
          const email_confirm = await mail.send({
-            to: "danroom85@gmail.com",
+            to: `${email}`,
             from: "danroom@naver.com",
             subject: "Your Miumiu Market Verification Email",
             text: `Your token is ${payload}.`,
