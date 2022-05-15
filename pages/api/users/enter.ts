@@ -128,13 +128,13 @@ async function handler(
         // });
         // console.log(message);   
     } else if (email) {
-/*         const email = await mail.send({
+         const email_confirm = await mail.send({
             from: "danroom@naver.com",
-            to: "danroom85@gmail.com",
-            subject: "Your Carrot Market Verification Email",
+            to: `${email}`,
+            subject: "Your MIUMIU Market Verification Email",
             text: `Your token is ${payload}.`,
             html: `<string>Your token is ${payload}.</strong>`,
-        }) */
+        }) 
     }
 
     return res.json({
